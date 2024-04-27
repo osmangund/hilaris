@@ -2,32 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+}
+body,
+html {
+  font-family: var(--font-clashdisplay);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+main,
+nav {
+  font-family: var(--font-clashdisplay);
+}
+
+@layer components {
+  .dropdown {
+    @apply absolute z-40 bg-white text-black border rounded-3xl p-6 top-[115%] flex flex-col gap-4 font-sans;
+  }
+  .value-button {
+    @apply flex items-center justify-center w-6 h-6 bg-gray-100 rounded-full cursor-pointer hover:bg-gray-200;
+  }
+  .date-day-bg {
+    @apply absolute h-10 w-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] -z-10 hover:bg-gray-200;
+  }
+  .text-shadow {
+    @apply drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)];
   }
 }
