@@ -4,7 +4,7 @@ import { useRef, useState } from "react"
 const hotels = ["okurcalar", "didim", "belek"]
 const HOTEL_TEXT = (h) => `Hilaris ${h[0].toUpperCase() + h.slice(1)}`
 
-export default function Hotels({hotel, setHotel}) {
+export default function Hotels({ hotel, setHotel }) {
   const [visible, setVisible] = useState(false)
   const ref = useRef(null)
   useClickOutside(ref, () => setVisible(false))

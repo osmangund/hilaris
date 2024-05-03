@@ -29,27 +29,25 @@ export default function Booking() {
   })
 
   return (
-    <nav className="fixed left-0 right-0 top-0 px-16 py-20 text-lg z-50">
-      <div className="flex justify-center">
-        <div
-          className={`w-full max-w-screen-lg flex justify-evenly gap-8 border px-6 py-2 rounded-[3rem] bg-black border-black text-${textColor}`}
+    <div className="flex justify-center">
+      <div
+        className={`w-full max-w-screen-lg flex justify-evenly gap-8 px-6 py-2  bg-black text-${textColor}`}
+      >
+        <Hotels hotel={hotel} setHotel={setHotel} />
+        <BookingDates
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+          currentDate={currentDate}
+          setCurrentDate={setCurrentDate}
+        />
+        <Guests guests={guests} setGuests={setGuests} />
+        <button
+          className="flex flex-col items-center justify-center"
+          onClick={() => console.log(hotel, selectedDate, guests)}
         >
-          <Hotels hotel={hotel} setHotel={setHotel} />
-          <BookingDates
-            selectedDate={selectedDate}
-            setSelectedDate={setSelectedDate}
-            currentDate={currentDate}
-            setCurrentDate={setCurrentDate}
-          />
-          <Guests guests={guests} setGuests={setGuests} />
-          <button
-            className="flex flex-col items-center justify-center"
-            onClick={() => console.log(hotel, selectedDate, guests)}
-          >
-            <Search width="24px" height="24px" fill={textColor} />
-          </button>
-        </div>
+          <Search width="24px" height="24px" fill={textColor} />
+        </button>
       </div>
-    </nav>
+    </div>
   )
 }

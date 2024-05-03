@@ -1,5 +1,6 @@
 import Hero from "@/components/hero"
-import Nav from "@/components/booking/booking"
+import Nav from "@/components/nav"
+import SelectHotel from "@/components/selecthotel"
 import Services from "@/components/services"
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <SelectHotel />
         <Services />
       </main>
     </>

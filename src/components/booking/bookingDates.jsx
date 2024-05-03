@@ -22,6 +22,10 @@ export default function Dates({
   const ref = useRef(null)
 
   useClickOutside(ref, () => setVisible(false))
+
+  const handleClick = (type) => {
+    setVisible(true)
+  }
   return (
     <>
       <div className="flex gap-16 relative" ref={ref}>
@@ -29,7 +33,7 @@ export default function Dates({
           <div
             className="cursor-pointer"
             onClick={() => {
-              setVisible((prev) => !prev)
+              handleClick("checkIn")
             }}
           >
             <h1>Check in</h1>
@@ -42,7 +46,7 @@ export default function Dates({
           <div
             className="cursor-pointer"
             onClick={() => {
-              setVisible((prev) => !prev)
+              handleClick("checkOut")
             }}
           >
             <h1>Check out</h1>
